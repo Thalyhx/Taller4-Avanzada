@@ -10,7 +10,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 
 @SpringBootApplication
-@Configuration
 public class Taller4Application {
     
     public static void main(String[] args) {
