@@ -4,37 +4,35 @@
  */
 package edu.udistrital.Model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import java.time.LocalDate;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
 
 /**
  *
  * @author nath
  */
-
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-
-public class Actividad {
+@Entity
+public class ActividadDTO {
     
-    private int idActividad;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)  //JPA, que el id se vaya auto incrementando
+    private Long idActividad;
     
-//    @NonNull
+    @Column(nullable = false, length = 100)
     private String titulo;
     
+    @Column(length = 500)
     private String descripcion;
+    
     private LocalDate fechaInicio;
     private LocalDate fechaTerminacion;
     private String tipoActividad;
-    private int idQuehacer;
-    private int idTutor;
-    private int idHijo;
-    
+    private Long idQuehacer;
+    private Long idTutor;
+    private Long idHijo;
     
 }
