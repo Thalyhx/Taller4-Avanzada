@@ -25,7 +25,7 @@ public class Actividad {
     
     private int idActividad;
     
-//    @NonNull
+    @NonNull
     private String titulo;
     
     private String descripcion;
