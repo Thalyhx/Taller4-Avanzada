@@ -22,3 +22,10 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+/BackEnd/target/
+/Taller 4/target/
+/Taller 4/src/main/java/edu/udistrital/FrontEnd/nbproject/private/
+/BackEnd/src/main/java/edu/udistrital/FrontEnd/nbproject/private/
+/Taller4/target/
+/Taller4/src/main/java/edu/udistrital/FrontEnd/nbproject/private/
+/FrontEnd/nbproject/private/
