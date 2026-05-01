@@ -2,12 +2,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package edu.udistrital.Repository;
+package edu.udistrital.BackEnd.Controller;
+
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  *
- * @author nath
+ * @author Nath
  */
-public class ActividadRepository {
+
+@RestController
+public class ActividadRestController {
     
 }

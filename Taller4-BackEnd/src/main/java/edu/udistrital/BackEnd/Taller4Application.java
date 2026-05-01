@@ -1,4 +1,4 @@
-package edu.udistrital;
+package edu.udistrital.BackEnd;
 
 
 import org.springframework.boot.SpringApplication;
