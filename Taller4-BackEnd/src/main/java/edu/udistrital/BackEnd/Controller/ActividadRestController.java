@@ -4,6 +4,7 @@
  */
 package edu.udistrital.BackEnd.Controller;
 
+import edu.udistrital.BackEnd.Repository.ActividadRepository;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -14,4 +15,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ActividadRestController {
     
+    //Inyeccion a Actividadrepositorio
+    ActividadRepository repositorio;
+    public ActividadRestController(ActividadRepository repositorio){
+        this.repositorio = repositorio;
+    }    
+  
 }
