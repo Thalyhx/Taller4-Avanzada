@@ -10,12 +10,14 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import java.time.LocalDate;
+import lombok.Data;
 
 /**
  *
  * @author nath
  */
 @Entity
+@Data
 public class ActividadDTO {
     
     @Id
@@ -34,5 +36,22 @@ public class ActividadDTO {
     private Long idQuehacer;
     private Long idTutor;
     private Long idHijo;
+
+    
+    //Constructor
+    
+    public ActividadDTO(Long idActividad, String titulo, String descripcion, LocalDate fechaInicio, LocalDate fechaTerminacion, String tipoActividad, Long idQuehacer, Long idTutor, Long idHijo) {
+        this.idActividad = idActividad;
+        this.titulo = titulo;
+        this.descripcion = descripcion;
+        this.fechaInicio = fechaInicio;
+        this.fechaTerminacion = fechaTerminacion;
+        this.tipoActividad = tipoActividad;
+        this.idQuehacer = idQuehacer;
+        this.idTutor = idTutor;
+        this.idHijo = idHijo;
+    }
+    
+    
     
 }
