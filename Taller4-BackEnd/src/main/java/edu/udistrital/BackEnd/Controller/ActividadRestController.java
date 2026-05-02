@@ -27,7 +27,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
 @RestController
-@RequestMapping("/api/actividad")
+@RequestMapping("/api/actividades")
 public class ActividadRestController {
     
     //Inyeccion a Actividadservice
@@ -46,9 +46,9 @@ public class ActividadRestController {
      * @param actividadDTO Objeto Actividad a crear (recibido como JSON)
      * @return ResponseEntity con la actividad creada
      */
-    @PostMapping
+    @PostMapping("/actividad")
     @ResponseStatus(HttpStatus.CREATED)
-    public ActividadDTO crearActividad(@RequestBody ActividadDTO actividad) {
+    public ActividadDTO crearActividad( @RequestBody ActividadDTO actividad) {
   
     return service.crear(actividad);
     }
@@ -56,7 +56,7 @@ public class ActividadRestController {
      /**
      *  Obtener todas las actividades
      */
-    @GetMapping("/actividades")
+    @GetMapping
     public List<ActividadDTO> obtenerActividades() {
          
     return service.obtenerTodas();
