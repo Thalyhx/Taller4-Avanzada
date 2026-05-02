@@ -1,0 +1,85 @@
+================================================================================
+         DOCUMENTACIÓN - MICROSERVICIO CRUD DE ACTIVIDAD
+         Spring Boot 3 | H2 Database | Spring Data JPA
+================================================================================
+
+AUTORES: Nathaly Cisneros, Sebastian Sanchez
+
+================================================================================
+ ENDPOINTS REST
+================================================================================
+
+1 URL BASE
+
+http://localhost:9000/api/actividades
+
+2 Para acceder a la consola H2:
+
+http://localhost:9000/h2-console
+
+3 OPERACIONES CRUD
+
+┌─────────┬──────────────────────┬──────────────────────────────────────────┐
+│ MÉTODO  │ URLS                                                  │ DESCRIPCIÓN                   │
+├─────────┼──────────────────────┼──────────────────────────────────────────┤
+│ POST    │ http://localhost:9000/api/actividades/actividad       │ Crear nueva actividad         │
+│ GET     │ http://localhost:9000/api/actividades                 │ Obtener todas las actividades │
+│ GET     │ http://localhost:9000/api/actividades/{id}            │ Obtener actividad por ID      │
+│ PUT     │ http://localhost:9000/api/actividades/update/{id}     │ Actualizar actividad          │
+│ DELETE  │ http://localhost:9000/api/actividades/delete/{id}     │ Eliminar actividad            │
+└─────────┴──────────────────────┴──────────────────────────────────────────┘
+
+
+================================================================================
+CONFIGURACIÓN DE LA BASE DE DATOS
+================================================================================
+
+1. ARCHIVO: application.properties
+
+en el archivo application.properties debe ir la siguiente configuración:
+
+spring.application.name=Taller4-Back
+server.port=9000
+
+#Habilita la consola web de H2
+spring.h2.console.enabled=true
+spring.h2.console.path=/h2-console
+
+# Credenciales y ruta de la base de datos
+spring.datasource.url=jdbc:h2:mem:actividad
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=
+spring.datasource.password=
+
+# JPA crea y actualiza las tablas automáticamente según el @Entity
+spring.jpa.defer-datasource-initialization=true
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+spring.jpa.show-sql=true
+
+
+================================================================================
+2. SCRIPTS SQL
+================================================================================
+
+1 ARCHIVO: data.sql
+
+Ubicación: Taller4-BackEnd/src/main/resources/data.sql
+
+Este archivo contiene INSERT iniciales para poblar la base de datos con datos 
+de prueba. Se ejecuta automáticamente
+
+================================================================================
+3. CREDENCIALES
+================================================================================
+
+BASE DE DATOS H2 (En Memoria)
+
+Usuario: (vacio)
+Contraseña: (vacío)
+URL: jdbc:h2:mem:actividades
+
+Para acceder a la consola H2:
+http://localhost:9000/h2-console
+
+
