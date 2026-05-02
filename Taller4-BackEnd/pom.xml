@@ -28,7 +28,7 @@
 	</scm>
 	<properties>
 		<java.version>25</java.version>
-                <start-class>edu.udistrital.TallerApplication</start-class>
+<!--                <start-class>edu.udistrital.BackEnd.TallerApplication</start-class>-->
 	</properties>
 	<dependencies>
 		<dependency>
