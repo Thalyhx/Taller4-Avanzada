@@ -4,7 +4,7 @@
  */
 package edu.udistrital.BackEnd.Service;
 
-import edu.udistrital.BackEnd.Model.ActividadDTO;
+import edu.udistrital.BackEnd.Model.Actividad;
 import edu.udistrital.BackEnd.Repository.ActividadRepository;
 import java.util.List;
 import java.util.Optional;
@@ -35,7 +35,7 @@ public class ActividadService {
      * Obtiene todas las actividades
      * @return Lista de actividades
      */
-    public List<ActividadDTO> obtenerTodas() {
+    public List<Actividad> obtenerTodas() {
         return repository.findAll();
     }
     
@@ -45,9 +45,9 @@ public class ActividadService {
      * @param id ID de la actividad
      * @return Optional con la actividad si existe
      */
-    public ActividadDTO obtenerPorId(Long id) {
+    public Actividad obtenerPorId(Long id) {
         
-        Optional<ActividadDTO> optionalActividad = repository.findById(id);
+        Optional<Actividad> optionalActividad = repository.findById(id);
         return optionalActividad.get();
     }
     
@@ -56,7 +56,7 @@ public class ActividadService {
      * @param actividadDTO Objeto de actividad a guardar
      * @return La actividad guardada
      */
-    public ActividadDTO crear (ActividadDTO actividad) {
+    public Actividad crear (Actividad actividad) {
         return repository.save(actividad);
     }
     
@@ -66,7 +66,7 @@ public class ActividadService {
      * @param actividadActualizada Datos actualizados de la actividad
      * @return La actividad actualizada
      */
-            public Optional<ActividadDTO> actualizar(Long id, ActividadDTO actividadActualizada) {
+            public Optional<Actividad> actualizar(Long id, Actividad actividadActualizada) {
 
                 //Busca en la base de datos.
                 return repository.findById(id).map(actividadAntigua -> {

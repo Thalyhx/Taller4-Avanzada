@@ -4,7 +4,7 @@
  */
 package edu.udistrital.BackEnd.Controller;
 
-import edu.udistrital.BackEnd.Model.ActividadDTO;
+import edu.udistrital.BackEnd.Model.Actividad;
 import edu.udistrital.BackEnd.Service.ActividadService;
 import java.util.List;
 import java.util.Optional;
@@ -48,7 +48,7 @@ public class ActividadRestController {
      */
     @PostMapping("/actividad")
     @ResponseStatus(HttpStatus.CREATED)
-    public ActividadDTO crearActividad( @RequestBody ActividadDTO actividad) {
+    public Actividad crearActividad( @RequestBody Actividad actividad) {
   
     return service.crear(actividad);
     }
@@ -57,7 +57,7 @@ public class ActividadRestController {
      *  Obtener todas las actividades
      */
     @GetMapping
-    public List<ActividadDTO> obtenerActividades() {
+    public List<Actividad> obtenerActividades() {
          
     return service.obtenerTodas();
     }
@@ -67,7 +67,7 @@ public class ActividadRestController {
      * @param id ID de la actividad
      */
     @GetMapping("/{id}")
-    public ActividadDTO obtenerActividadPorId(@PathVariable("id") Long id) {
+    public Actividad obtenerActividadPorId(@PathVariable("id") Long id) {
 
         return service.obtenerPorId(id);
 
@@ -79,12 +79,12 @@ public class ActividadRestController {
      * @param actividadActualizada Datos actualizados de la actividad (recibido como JSON)
      */
     @PutMapping("/update/{id}")
-    public ResponseEntity<ActividadDTO> actualizarActividad(
+    public ResponseEntity<Actividad> actualizarActividad(
                 @PathVariable Long id, 
-                @RequestBody ActividadDTO actividadActualizada) {
+                @RequestBody Actividad actividadActualizada) {
 
             // Llamamos al servicio que devuelve el Optional
-            Optional<ActividadDTO> resultado = service.actualizar(id, actividadActualizada);
+            Optional<Actividad> resultado = service.actualizar(id, actividadActualizada);
             return resultado
                     .map(actividad -> ResponseEntity.ok(actividad)) 
                 .orElseGet(() -> ResponseEntity.notFound().build());

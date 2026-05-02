@@ -4,37 +4,61 @@
  */
 package edu.udistrital.BackEnd.Model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import java.time.LocalDate;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
+
 
 /**
  *
  * @author nath
  */
-
+@Entity
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
-
+@Table(name = "actividades")
 public class Actividad {
     
-    private int idActividad;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)  //JPA, que el id se vaya auto incrementando
+    private Long idActividad;
     
+    @Column(nullable = false, length = 100)
     @NonNull
     private String titulo;
     
+    @Column(length = 500)
     private String descripcion;
+    
     private LocalDate fechaInicio;
     private LocalDate fechaTerminacion;
     private String tipoActividad;
-    private int idQuehacer;
-    private int idTutor;
-    private int idHijo;
+    private Long idQuehacer;
+    private Long idTutor;
+    private Long idHijo;
+
+    
+    //Constructor
+    
+    public Actividad(Long idActividad, String titulo, String descripcion, LocalDate fechaInicio, LocalDate fechaTerminacion, String tipoActividad, Long idQuehacer, Long idTutor, Long idHijo) {
+        this.idActividad = idActividad;
+        this.titulo = titulo;
+        this.descripcion = descripcion;
+        this.fechaInicio = fechaInicio;
+        this.fechaTerminacion = fechaTerminacion;
+        this.tipoActividad = tipoActividad;
+        this.idQuehacer = idQuehacer;
+        this.idTutor = idTutor;
+        this.idHijo = idHijo;
+    }
+    
     
     
 }
