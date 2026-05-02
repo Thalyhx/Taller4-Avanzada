@@ -57,9 +57,6 @@ public class ActividadService {
      * @return La actividad guardada
      */
     public ActividadDTO crear (ActividadDTO actividad) {
-        if (actividad.getTitulo() == null || actividad.getTitulo().isEmpty()) {
-            throw new IllegalArgumentException("El título de la actividad es obligatorio");
-        }
         return repository.save(actividad);
     }
     
