@@ -4,7 +4,7 @@
  */
 package edu.udistrital.BackEnd.Repository;
 
-import edu.udistrital.BackEnd.Model.Actividad;
+import edu.udistrital.BackEnd.Model.ActividadDTO;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  * @author nath
  */
 @Repository
-public interface ActividadRepository extends JpaRepository<Actividad, Long>{
+public interface ActividadRepository extends JpaRepository<ActividadDTO, Long>{
     
 }
