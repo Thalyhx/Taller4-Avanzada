@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -46,7 +47,7 @@ public class ActividadRestController {
      * @param actividadDTO Objeto Actividad a crear (recibido como JSON)
      * @return ResponseEntity con la actividad creada
      */
-    @PostMapping("/actividad")
+    @RequestMapping(value = "/actividad", method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
     public Actividad crearActividad( @RequestBody Actividad actividad) {
   
@@ -56,7 +57,7 @@ public class ActividadRestController {
      /**
      *  Obtener todas las actividades
      */
-    @GetMapping
+    @RequestMapping(method = RequestMethod.GET)
     public List<Actividad> obtenerActividades() {
          
     return service.obtenerTodas();
@@ -66,7 +67,7 @@ public class ActividadRestController {
      * Obtener una actividad por ID
      * @param id ID de la actividad
      */
-    @GetMapping("/{id}")
+        @RequestMapping(value="/{id}" ,method = RequestMethod.GET)
     public Actividad obtenerActividadPorId(@PathVariable("id") Long id) {
 
         return service.obtenerPorId(id);
@@ -78,7 +79,7 @@ public class ActividadRestController {
      * @param id ID de la actividad a actualizar
      * @param actividadActualizada Datos actualizados de la actividad (recibido como JSON)
      */
-    @PutMapping("/update/{id}")
+    @RequestMapping(value="/update/{id}" ,method = RequestMethod.PUT)
     public ResponseEntity<Actividad> actualizarActividad(
                 @PathVariable Long id, 
                 @RequestBody Actividad actividadActualizada) {
@@ -95,7 +96,7 @@ public class ActividadRestController {
      * Eliminar una actividad por ID
      * @param id ID de la actividad a eliminar
      */
-    @DeleteMapping("/delete/{id}")
+    @RequestMapping(value="/delete/{id}" ,method = RequestMethod.DELETE)
     public void eliminarActividad(@PathVariable("id") Long id) {
 
         service.eliminar(id);

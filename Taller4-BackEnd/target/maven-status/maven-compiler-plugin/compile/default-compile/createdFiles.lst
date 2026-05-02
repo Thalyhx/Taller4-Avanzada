@@ -1,6 +1,6 @@
-edu\udistrital\BackEnd\Model\ActividadDTO.class
 edu\udistrital\BackEnd\Repository\ActividadRepository.class
 edu\udistrital\BackEnd\Model\Actividad.class
+edu\udistrital\BackEnd\Model\ActividadResponse.class
 edu\udistrital\BackEnd\Service\ActividadService.class
 edu\udistrital\BackEnd\Taller4Application.class
 edu\udistrital\BackEnd\Controller\ActividadRestController.class
