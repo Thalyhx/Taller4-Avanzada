@@ -1,4 +1,4 @@
-package edu.udistrital.Taller4_Back;
+package edu.udistrital.BackEnd;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
