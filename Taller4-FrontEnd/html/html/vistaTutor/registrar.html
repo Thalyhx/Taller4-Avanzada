@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Registrar Actividad</title>
+        <link rel="icon" href="../..    /Images/icono.png" type="image/png">
+        <link rel="stylesheet" href="../../css/styles.css">
+        <link rel="stylesheet" href="../../css/formularios.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body class="dashboard-body">
+        
+    <!-- Navbar  -->
+    <nav class="navbar">
+                <div class="nav-logo">
+            <img src="../../Images/icono.png" alt="Icono" class="icon-small">
+            <span>Actividades</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../../index.html">Inicio</a></li>
+            <li><a href="actividades.html">Volver al Panel de Control</a></li>
+        </ul>
+    </nav>
+    
+    <!--Formulario-->
+    <main class="container">
+        <div class="form-wrapper">
+            <h2>Crear Nueva Actividad</h2>
+            <p>Asigna una tarea para fomentar la responsabilidad</p>
+            
+            <form id="formRegistrar">
+                <div class="form-grid">
+                    <!-- Columna 1 -->
+                    <div class="input-group">
+                        <label>Título de la Actividad</label>
+                        <input type="text" id="titulo" required placeholder="Ej: Lavar platos">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Tipo de Actividad</label>
+                        <select id="tipoActividad" >
+                            <option value="">Seleccione un tipo...</option>
+                            <option value="Física">Física</option>
+                            <option value="Acompañamiento">Acompañamiento</option>
+                            <option value="Académica">Académica</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Fecha Inicio</label>
+                        <input type="date" id="fechaInicio" >
+                    </div>
+
+                    <div class="input-group">
+                        <label>Fecha Terminación</label>
+                        <input type="date" id="fechaTerminacion" >
+                    </div>
+
+                    <!-- Columna 2 (IDs Requeridos) -->
+                    <div class="input-group">
+                        <label>ID Quehacer</label>
+                        <input type="number" id="idQuehacer"  placeholder="Código del quehacer">
+                    </div>
+
+                    <div class="input-group">
+                        <label>ID Tutor (Tú)</label>
+                        <input type="number" id="idTutor" required placeholder="Tu ID asignado">
+                    </div>
+
+                    <div class="input-group">
+                        <label>ID Hijo</label>
+                        <input type="number" id="idHijo" required placeholder="ID del hijo responsable">
+                    </div>
+                </div>
+
+                <div class="input-group full-width">
+                    <label>Descripción detallada</label>
+                    <textarea id="descripcion" rows="3"  placeholder="Instrucciones específicas..."></textarea>
+                </div>
+
+                <div class="button-group-form">
+                    <button type="submit" class="btn-submit">Registrar Actividad</button>
+                    <button type="reset" class="btn-reset">Limpiar Formulario</button>
+                </div>
+            </form>
+        </div>
+    </main>
+           
+    </body>
+    <footer class="main-footer">
+    <div class="footer-content">
+        <p>&copy; 2026 Gestión de Actividades.</p>
+        <p class="authors">Desarrollado por: <span>Nath</span> | <span>Sebas</span></p>
+        <p class="university">Ingeniería de Sistemas - Universidad Distrital Francisco José de Caldas</p>
+    </div>
+</footer>
+</html>

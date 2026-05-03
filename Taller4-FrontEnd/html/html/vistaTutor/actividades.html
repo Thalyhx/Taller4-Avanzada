@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Panel del Tutor</title>
+        <link rel="icon" href="../../Images/icono.png" type="image/png">
+        <link rel="stylesheet" href="../../css/styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+<body class="dashboard-body">
+
+    <!-- Navbar  -->
+    <nav class="navbar">
+                <div class="nav-logo">
+            <img src="../../Images/icono.png" alt="Icono" class="icon-small">
+            <span>Actividades</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../../index.html">Inicio</a></li>
+            <li><a href="registrar.html">Crear Nueva</a></li>
+            <li><a href="../vistaHijo/actividades_fecha.html">Vista Hijo</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <h1 class="table-title">Lista de Actividades</h1>
+
+        <!-- Buscador por ID (Requerimiento de microservicio) -->
+        <div class="search-container">
+            <input type="number" id="inputIdBuscador" placeholder="Buscar ID de actividad...">
+            
+            <button id="btnBuscar" class="btn-icon-search">
+            <img src="../../Images/Search_icon.png" alt="Buscar">
+            </button>
+            
+            <button id="btnLimpiar" class="btn-clear">Ver Todas</button>
+        </div>
+
+        <!-- Tabla de Actividades -->
+        <div class="table-wrapper">
+            <table id="tablaActividades">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Título</th>
+                        <th>Descripción</th>
+                        <th>Tipo</th>
+                        <th>Hijo Asignado</th>
+                        <th>Tutor Asignado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="bodyActividades">
+                    <!-- Los datos se cargan aquí con JS -->
+                </tbody>
+                
+                <!-- Modal de Edición -->
+                <div id="modalEditar" class="modal">
+                    <div class="modal-content">
+                        <span class="close" onclick="cerrarModal()">&times;</span>
+                        <h2>Editar Actividad</h2>
+                        <form id="formEditar">
+                            <!-- Campo oculto para guardar el ID-->
+                            <input type="hidden" id="editId">
+
+                            <label>Título</label>
+                            <input type="text" id="editTitulo" required>
+
+                            <label>Descripción</label>
+                            <textarea id="editDescripcion" required></textarea>
+
+                            <div class="form-grid-mini">
+                                <div class="input-group">
+                                    <label>Tipo</label>
+                                    <select id="editTipo">
+                                        <option value="Física">Física</option>
+                                        <option value="Acompañamiento">Acompañamiento</option>
+                                        <option value="Académica">Académica</option>
+                                    </select>
+                                </div>
+                                <div class="input-group">
+                                    <label>ID Hijo</label>
+                                    <input type="number" id="editHijo" required>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn-save">Guardar Cambios</button>
+                        </form>
+                    </div>
+                </div>
+            </table>
+        </div>
+    </main>
+
+    <!-- Scripts:  -->
+    <script src="../../js/api.js"></script>
+    <script src="../../js/tutor.js"></script>
+</body>
+
+    <footer class="main-footer">
+    <div class="footer-content">
+        <p>&copy; 2026 Gestión de Actividades.</p>
+        <p class="authors">Desarrollado por: <span>Nath</span> | <span>Sebas</span></p>
+        <p class="university">Ingeniería de Sistemas - Universidad Distrital Francisco José de Caldas</p>
+    </div>
+    </footer>
+</html>

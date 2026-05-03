@@ -7,3 +7,440 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     Author     : nath
 */
 
+/* Configuración General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Fondo de Imagen */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Obliga al cuerpo a medir al menos el alto de la pantalla */
+    margin: 0;
+}
+
+.hero {
+
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+}
+
+.hijo{
+    height: 100vh;
+    background-image: url('../Images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    
+    
+}
+
+
+.overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/* Barra de Navegación */
+.navbar {
+    position: fixed;
+    top: 0; width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+    background: activecaption;
+    backdrop-filter: blur(10px); 
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: blue;
+    font-weight: 600;
+}
+
+/* Contenido */
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: black;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+}
+
+/* Grupo de Botones */
+.button-group {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px; 
+    justify-content: center;
+}
+
+.btn {
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: transform 0.3s ease;
+}
+
+.btn:hover {
+    transform: scale(1.05); 
+}
+
+.btn-primary { background-color: lightblue; color: white; }
+.btn-secondary { background-color: lightyellow; color: black; }
+
+.icon-small { width: 30px; height: 30px; margin-right: 10px; }
+
+/* Estilos para el Footer */
+.main-footer {
+    width: 100%;
+    padding: 25px 0;
+    background: rgba(255, 255, 255, 0.05); 
+    backdrop-filter: blur(12px); 
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: black;
+    text-align: center;
+    position: relative; 
+    margin-top: auto;
+}
+
+.footer-content p {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    opacity: 0.8;
+}
+
+.authors span {
+    font-weight: 600;
+    color: #3498db; 
+}
+
+.university {
+    font-style: italic;
+    font-size: 0.8rem !important;
+    margin-top: 10px;
+    letter-spacing: 1px;
+}
+
+/* Contenedor de lista de actividades */
+.container {
+    padding: 100px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+}
+
+.table-title {
+    color: #3498db;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.table-title-hijo{
+    color: black;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Diseño de la Tabla */
+.table-wrapper {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    overflow-x: auto;
+}
+.table-wrapper-hijo {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    overflow-x: auto;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    color: white;
+}
+
+th {
+    background-color: lightblue; 
+    padding: 15px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    border-bottom: 3px solid lavender; 
+}
+
+/* Líneas  entre filas */
+td {
+    padding: 12px;
+    border-bottom: 3px solid lavender; 
+    text-align: center;
+}
+
+
+/* Efecto hover en filas */
+tr:hover {
+    background: rgba(230, 230, 255, 0.1); 
+}
+
+/* Botones de acción dentro de la tabla */
+.btn-edit { color: #f1c40f; cursor: pointer; margin-right: 10px; border:none; background:none; }
+.btn-delete { color: #e74c3c; cursor: pointer; border:none; background:none; }
+
+/* Buscador */
+.search-container {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.search-container input {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    width: 250px;
+}
+
+/* Fondo Tutor*/
+.dashboard-body {
+
+    background-image: url('../Images/background_tutor.png'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/*  Borde y estilo del input buscador  */
+#inputIdBuscador {
+    padding: 12px 15px;
+    border-radius: 10px 0 0 10px; /* Redondeado  */
+    border: 2px solid lavender;    
+    background: rgba(255, 255, 255, 0.9);
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#inputIdBuscador:focus {
+    border-color: lavender; /* El borde cambia al hacer clic */
+}
+
+.btn-icon-search {
+    background-color: #3498db;
+    border: 2px solid #3498db;
+    border-left: none; /* Une el botón con el input */
+    padding: 5px 15px;
+    border-radius: 0 10px 10px 0; /* Redondeado solo a la derecha */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background 0.3s;
+}
+
+.btn-icon-search:hover {
+    background-color: lightblue;
+}
+
+.btn-icon-search img {
+    width: 25px;  
+    height: 25px;
+    filter: brightness(0) invert(1); /* Vuelve el icono blanco si es negro */
+}
+
+/*Boton del tutor de ver todas*/
+.btn-clear {
+    background-color: #3498db;
+    color: white;
+    border: 2px solid #3498db;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease; 
+}
+
+/* Efecto ahover de vertodas*/
+.btn-clear:hover {
+    background-color: lightblue;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2); 
+    transform: translateY(-2px); 
+}
+
+ /* color letra de las actividades*/
+table tbody td {
+    color: black; 
+    font-weight: 500; 
+}
+
+/* Color de las actividades cuando estan sobre ellas*/
+table tbody tr:hover {
+    background-color: rgba(173, 216, 230, 0.2); 
+    transition: background-color 0.3s ease;
+}
+
+/*Estilos del formulario de editar*/
+
+/* El contenedor del modal  */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px); /* Desenfoque de fondo */
+}
+
+/* El cuadro blanco/cristal del formulario */
+.modal-content {
+    background: rgba(255, 255, 255, 0.9); /* Blanco casi opaco para leer mejor */
+    margin: 5% auto;
+    padding: 30px;
+    border-radius: 20px;
+    width: 450px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    position: relative;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+}
+
+.close {
+    position: absolute;
+    right: 20px; top: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #e74c3c;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.close:hover { transform: scale(1.2); }
+
+/* Título del Modal */
+.modal-content h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #3498db;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Organizar los campos uno debajo del otro */
+#formEditar {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacio entre cada campo */
+    text-align: left;
+}
+
+/* Estilo para los Labels */
+#formEditar label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: -10px; /* Pegar el label al input */
+}
+
+/* Estilo para los Inputs dentro del modal */
+#formEditar input, 
+#formEditar select, 
+#formEditar textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#formEditar input:focus {
+    border-color: #3498db;
+}
+
+/* El botón de guardar cambios */
+.btn-save {
+    background: #2ecc71;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.btn-save:hover {
+    background: #27ae60;
+    box-shadow: 0 5px 15px rgba(46, 204, 113, 0.4);
+}
+
+
+/* Vista del hijo*/
+
+/* Fondo específico para el listado por fechas */
+.calendario-body {
+    background-image: url('../Images/fondo-calendario.jpg'); /* Asegúrate de tener esta imagen */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Botón de Comentar */
+.btn-comment {
+    background-color: #f39c12; /* Color naranja */
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: 0.3s;
+}
+
+.btn-comment:hover {
+    background-color: #e67e22;
+    transform: scale(1.05);
+}
