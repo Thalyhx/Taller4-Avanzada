@@ -419,7 +419,7 @@ table tbody tr:hover {
 
 /* Fondo específico para el listado por fechas */
 .calendario-body {
-    background-image: url('../Images/fondo-calendario.jpg'); /* Asegúrate de tener esta imagen */
+    background-image: url('../Images/fondo-calendario.jpg'); 
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
