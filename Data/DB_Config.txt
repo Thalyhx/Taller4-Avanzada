@@ -19,15 +19,17 @@ http://localhost:9000/h2-console
 
 3 OPERACIONES CRUD
 
-┌─────────┬──────────────────────┬──────────────────────────────────────────┐
+Se probó usando POSTMAN
+
+┌─────────┬──────────────────────┬────────────────────────────────────────────────────────────────┐
 │ MÉTODO  │ URLS                                                  │ DESCRIPCIÓN                   │
-├─────────┼──────────────────────┼──────────────────────────────────────────┤
+├─────────┼──────────────────────┼────────────────────────────────────────────────────────────────┤
 │ POST    │ http://localhost:9000/api/actividades/actividad       │ Crear nueva actividad         │
 │ GET     │ http://localhost:9000/api/actividades                 │ Obtener todas las actividades │
 │ GET     │ http://localhost:9000/api/actividades/{id}            │ Obtener actividad por ID      │
 │ PUT     │ http://localhost:9000/api/actividades/update/{id}     │ Actualizar actividad          │
 │ DELETE  │ http://localhost:9000/api/actividades/delete/{id}     │ Eliminar actividad            │
-└─────────┴──────────────────────┴──────────────────────────────────────────┘
+└─────────┴──────────────────────┴────────────────────────────────────────────────────────────────┘
 
 
 ================================================================================
