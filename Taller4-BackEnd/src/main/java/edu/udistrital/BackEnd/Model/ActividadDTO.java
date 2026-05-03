@@ -24,7 +24,7 @@ import lombok.NonNull;
 @Data
 @NoArgsConstructor
 @Table(name = "actividades")
-public class Actividad {
+public class ActividadDTO {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)  //JPA, que el id se vaya auto incrementando
@@ -47,7 +47,7 @@ public class Actividad {
     
     //Constructor
     
-    public Actividad(Long idActividad, String titulo, String descripcion, LocalDate fechaInicio, LocalDate fechaTerminacion, String tipoActividad, Long idQuehacer, Long idTutor, Long idHijo) {
+    public ActividadDTO(Long idActividad, String titulo, String descripcion, LocalDate fechaInicio, LocalDate fechaTerminacion, String tipoActividad, Long idQuehacer, Long idTutor, Long idHijo) {
         this.idActividad = idActividad;
         this.titulo = titulo;
         this.descripcion = descripcion;

@@ -4,7 +4,7 @@
  */
 package edu.udistrital.BackEnd.Controller;
 
-import edu.udistrital.BackEnd.Model.Actividad;
+import edu.udistrital.BackEnd.Model.ActividadDTO;
 import edu.udistrital.BackEnd.Service.ActividadService;
 import java.util.List;
 import java.util.Optional;
@@ -44,12 +44,12 @@ public class ActividadRestController {
     
      /**
      * Crea una nueva actividad
-     * @param actividadDTO Objeto Actividad a crear (recibido como JSON)
+     * @param actividadDTO Objeto ActividadDTO a crear (recibido como JSON)
      * @return ResponseEntity con la actividad creada
      */
     @RequestMapping(value = "/actividad", method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
-    public Actividad crearActividad( @RequestBody Actividad actividad) {
+    public ActividadDTO crearActividad( @RequestBody ActividadDTO actividad) {
   
     return service.crear(actividad);
     }
@@ -58,7 +58,7 @@ public class ActividadRestController {
      *  Obtener todas las actividades
      */
     @RequestMapping(method = RequestMethod.GET)
-    public List<Actividad> obtenerActividades() {
+    public List<ActividadDTO> obtenerActividades() {
          
     return service.obtenerTodas();
     }
@@ -68,7 +68,7 @@ public class ActividadRestController {
      * @param id ID de la actividad
      */
         @RequestMapping(value="/{id}" ,method = RequestMethod.GET)
-    public Actividad obtenerActividadPorId(@PathVariable("id") Long id) {
+    public ActividadDTO obtenerActividadPorId(@PathVariable("id") Long id) {
 
         return service.obtenerPorId(id);
 
@@ -80,12 +80,12 @@ public class ActividadRestController {
      * @param actividadActualizada Datos actualizados de la actividad (recibido como JSON)
      */
     @RequestMapping(value="/update/{id}" ,method = RequestMethod.PUT)
-    public ResponseEntity<Actividad> actualizarActividad(
+    public ResponseEntity<ActividadDTO> actualizarActividad(
                 @PathVariable Long id, 
-                @RequestBody Actividad actividadActualizada) {
+                @RequestBody ActividadDTO actividadActualizada) {
 
             // Llamamos al servicio que devuelve el Optional
-            Optional<Actividad> resultado = service.actualizar(id, actividadActualizada);
+            Optional<ActividadDTO> resultado = service.actualizar(id, actividadActualizada);
             return resultado
                     .map(actividad -> ResponseEntity.ok(actividad)) 
                 .orElseGet(() -> ResponseEntity.notFound().build());
