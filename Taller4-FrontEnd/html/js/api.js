@@ -123,7 +123,7 @@ async function eliminarActividad(id) {
 }
 
 ///////Pruebas///////
-//     ACTIVIDADES DE PRUEBA PARA EL FRONT
+//     ACTIVIDADES DE PRUEBA PARA EL FRONT , tova comentar las function finales si se quiere probar
 //     
 //async function obtenerActividadPorId(id) {
 //    // --- SIMULACIÓN DE RESPUESTA DEL BACKEND ---

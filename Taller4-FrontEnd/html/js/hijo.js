@@ -3,8 +3,39 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/javascript.js to edit this template
  */
 
+
 document.addEventListener("DOMContentLoaded", () => {
+    // Carga inicial de todas las actividades
     cargarCalendario();
+
+    // Evento para buscar por ID
+    const btnBuscar = document.getElementById("btnBuscar");
+    if (btnBuscar) {
+        btnBuscar.addEventListener("click", async () => {
+            const id = document.getElementById("inputIdBuscador").value;
+            if (!id) return alert("Por favor, ingresa un ID para buscar.");
+
+            try {
+                // Usa la función de búsqueda de api.js
+                const actividad = await obtenerActividadPorId(id);
+                
+                renderizarCalendario([actividad]); 
+                
+            } catch (error) {
+                alert("No se encontró la actividad con ID: " + id);
+                console.error(error);
+            }
+        });
+    }
+
+    //  Evento para limpiar búsqueda 
+    const btnLimpiar = document.getElementById("btnLimpiar");
+    if (btnLimpiar) {
+        btnLimpiar.addEventListener("click", () => {
+            document.getElementById("inputIdBuscador").value = ""; // Limpia el input
+            cargarCalendario(); // Llama a la función de carga general del hijo
+        });
+    }
 });
 
 async function cargarCalendario() {
